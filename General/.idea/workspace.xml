@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dcbf82c-7378-44dd-a65c-bc3da43843ad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/bucketBrigade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/doYouKnowYourABCs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/promotionCounting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/soldiersAndBananas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/team.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/teleportation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wordProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/Stempia-USACO.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Stempia-USACO/General/teleportation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/General/teleportation.java" beforeDir="false" />
-    </list>
+    <list default="true" id="3dcbf82c-7378-44dd-a65c-bc3da43843ad" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
