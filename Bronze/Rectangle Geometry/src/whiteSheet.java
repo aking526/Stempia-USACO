@@ -1,43 +1,60 @@
 import java.util.*;
 import java.io.*;
 
-public class twoTables {
+public class whiteSheet {
     static FastScanner fs = new FastScanner(System.in);
     static PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
     static final int mxN = Integer.MAX_VALUE;
     static final int mnN = Integer.MIN_VALUE;
     public static void main(String[] args) throws IOException {
-        int t = fs.nextInt();
+        Rectangle A = new Rectangle(fs.nextInt(), fs.nextInt(), fs.nextInt(), fs.nextInt());
+        Rectangle B = new Rectangle(fs.nextInt(), fs.nextInt(), fs.nextInt(), fs.nextInt());
+        Rectangle C = new Rectangle(fs.nextInt(), fs.nextInt(), fs.nextInt(), fs.nextInt());
 
-        for (int i = 0; i < t; i++) {
-            test_case();
-        }
+        A = cut(A, B);
+        A = cut(A, C);
 
+        pw.println(A.area() == 0 ? "NO" : "YES");
         pw.close();
     }
 
-    public static void test_case() throws IOException {
-        int W = fs.nextInt(), H = fs.nextInt();
-        int x1 = fs.nextInt(), y1 = fs.nextInt(), x2 = fs.nextInt(), y2 = fs.nextInt();
-        int w = fs.nextInt(), h = fs.nextInt();
-
-        if (h + (y2 - y1) > H && w + (x2 - x1) > W) {
-            pw.println(-1);
-            return;
+    static class Rectangle {
+        public int x1, y1, x2, y2, area;
+        public Rectangle(int a, int b, int c, int d) {
+            this.x1 = a;
+            this.y1 = b;
+            this.x2 = c;
+            this.y2 = d;
         }
 
-        int ans = Integer.MAX_VALUE;
-        if (x2 - x1 + w <= W) {
-            ans = Math.min(ans, Math.max(0, w - x1));
-            ans = Math.min(ans, Math.max(0, x2 - (W - w)));
+        public int area() {
+            return (x2 - x1) * (y2 - y1);
         }
-        if (y2 - y1 + h <= H) {
-            ans = Math.min(ans, Math.max(0, h - y1));
-            ans = Math.min(ans, Math.max(0, y2 - (H - h)));
-        }
-
-        pw.println((double) ans);
     }
+
+    static Rectangle cut(Rectangle A, Rectangle B) {
+        if (A.x1 >= B.x1 && B.x2 >= A.x1 && B.y1 <= A.y1 && B.y2 >= A.y2) {
+            A.x1 = B.x2;
+            A.x2 = Math.max(A.x2, B.x2);
+        }
+
+        if (A.x2 >= B.x1 && B.x2 >= A.x2 && B.y1 <= A.y1 && B.y2 >= A.y2) {
+            A.x2 = B.x1;
+            A.x1 = Math.min(A.x1, B.x1);
+        }
+
+        if (A.y1 >= B.y1 && B.y2 >= A.y1 && B.x1 <= A.x1 && B.x2 >= A.x2) {
+            A.y1 = B.y2;
+            A.y2 = Math.max(A.y2, B.y2);
+        }
+
+        if (A.y2 >= B.y1 && B.y2 >= A.y2 && B.x1 <= A.x1 && B.x2 >= A.x2) {
+            A.y2 = B.y1;
+            A.y1 = Math.min(A.y1, B.y1);
+        }
+        return A;
+    }
+
 
     static int ceil_divide(int a, int b) {
         return (a + b - 1) / b;
