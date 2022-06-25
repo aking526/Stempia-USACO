@@ -3,7 +3,7 @@ import java.util.StringTokenizer;
 
 public class shellGame {
     public static int N;
-    public static int pos[], cnt[];
+    public static int[] pos, cnt;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("shell.in"));
         PrintWriter pw = new PrintWriter("shell.out");
